@@ -4,5 +4,35 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/2.5Platformer.unity
+    guid: 00fddcd142d327b4699a7c1f53f36069
+  - enabled: 1
+    path: Assets/Scenes/3rdPerson.unity
+    guid: 5452f9ce02cd77a489ded00a2cd32565
+  - enabled: 1
+    path: Assets/Scenes/CanvasPointnClick.unity
+    guid: 0fe5026700f1ffd4a8e61e08c0c4c7cb
+  - enabled: 1
+    path: Assets/Scenes/Hexagon.unity
+    guid: 01ad0eca1aee565408c1db06e54d0d3d
+  - enabled: 1
+    path: Assets/Scenes/Loading.unity
+    guid: 9eae7dae3d10c3c4db37d7ece2c96e83
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Strategy.unity
+    guid: 08854d24f3c4fee44b54a5e67566a3a4
+  - enabled: 1
+    path: Assets/Scenes/TileBasedIsometric.unity
+    guid: 17c44c385141c0a40882a585002a8383
+  - enabled: 1
+    path: Assets/Scenes/TopDown.unity
+    guid: c1330ef2aa4a74e4a8e8fc1cb523b954
+  - enabled: 1
+    path: Assets/Scenes/TurnBasedIsometric.unity
+    guid: ecaa093c7ded03340ac61bbe93264e0f
   m_configObjects: {}
