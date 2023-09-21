@@ -56,8 +56,14 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\2.5Platformer\PlatformerPlayerController.cs" />
     <Compile Include="Assets\Scripts\Top-Down\TopDownController.cs" />
+    <Compile Include="Assets\Scripts\2.5Platformer\PlatformerPlayerController.cs" />
+    <Compile Include="Assets\Scripts\3rdPerson\PersonController.cs" />
+    <Compile Include="Assets\Scripts\TileBased\TileBasedController.cs" />
+    <Compile Include="Assets\Scripts\TileBased\Tile.cs" />
+    <Compile Include="Assets\Scripts\Strategy\StrategyController.cs" />
+    <Compile Include="Assets\Scripts\Hexagon\HexController.cs" />
+    <Compile Include="Assets\Scripts\Loader.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
