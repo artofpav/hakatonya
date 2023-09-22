@@ -8,5 +8,6 @@ public class HeroLevel : MonoBehaviour
     public Collider coll;
     public HeroLevel nextLevel;
     public GameObject houseHolder;
+    public GameObject cam;
 
 }

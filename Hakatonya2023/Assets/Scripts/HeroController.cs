@@ -140,8 +140,8 @@ public class HeroController : MonoBehaviour
 
 
         } else { //finish eating
-
-                //= Quaternion.RotateTowards(model.transform.rotation, Quaternion.LookRotation(foodToEat.transform.position, Vector3.up), rotationSpeed * (Time.deltaTime*10));
+            rBody.velocity = new Vector3(0, 0, 0);
+            //= Quaternion.RotateTowards(model.transform.rotation, Quaternion.LookRotation(foodToEat.transform.position, Vector3.up), rotationSpeed * (Time.deltaTime*10));
             eatingTime -= Time.deltaTime;
             if (eatingTime <= 0) {
                 eating = false;
