@@ -8,7 +8,7 @@ public class PutObjectOnGround : MonoBehaviour
 
 	public float radius;
 
-	void Start() {
+	void OnEnable() {
 		// set the vertical offset to the object's collider bounds' extends
 		if (GetComponent<Collider>() != null) {
 			radius = GetComponent<Collider>().bounds.extents.y;
