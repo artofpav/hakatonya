@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class HeroController : MonoBehaviour
 {
-
+    public GameObject model;
     public float speed = 1 ;
+    public float rotationSpeed = 90;
     public float maxSpeed;
     public bool rush = false;
     public float endurance = 1;
@@ -36,7 +37,9 @@ public class HeroController : MonoBehaviour
     private Rigidbody rBody;
     private float horizontal;
     private float vertical;
+    private Vector3 direction;
 
+    Quaternion toRotation;
 
 
 
@@ -56,7 +59,9 @@ public class HeroController : MonoBehaviour
 
         food -= hungerSpeed * Time.deltaTime;
 
-        if (food < 0) {
+        if (food > 1) {
+            food = 1;
+        } else if (food < 0) {
             life -= hungerDeathSpeed * Time.deltaTime;
         }
 
@@ -71,9 +76,18 @@ public class HeroController : MonoBehaviour
 
         vertical = Input.GetAxis("Vertical");
         horizontal = Input.GetAxis("Horizontal");
+        direction = new Vector3(horizontal, 0, vertical);
+        direction.Normalize();
 
 
+        if (direction != Vector3.zero) {
+            rBody.velocity = direction * speed * Time.deltaTime;
 
+            toRotation = Quaternion.LookRotation(direction, Vector3.up);
+            model.transform.rotation = Quaternion.RotateTowards(model.transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+        }
+
+        
             if (horizontal > 0) {
                 rBody.velocity = new Vector3(horizontal * speed, rBody.velocity.y, rBody.velocity.z);
             } else if (horizontal < 0) {

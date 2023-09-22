@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
 
     private void UpdateHUD() {
 
-        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+       /* ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit)) {
             if (Input.GetMouseButtonDown(0))
                 //print(hit.collider.name);
@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
                     }
                 }
                 
-        }
+        }*/
 
         hud.UpdateHUD();
     }
@@ -64,6 +64,10 @@ public class GameManager : MonoBehaviour
         if (enemy.level >= l) {
             hero.Hit(enemy.level - l);
         }
+    }
+
+    public void EatFood(Food food) {
+        hero.food += food.calories;
     }
 
     public void GameOver() {
