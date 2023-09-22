@@ -62,6 +62,7 @@ public class HeroController : MonoBehaviour
 
         if (naked) {
             radiation += radiationSpeed; //TODO нет максимума раддиации
+            life -= radiationSpeed * 10;
         }
 
         level += growLevel *(radiation+1);
