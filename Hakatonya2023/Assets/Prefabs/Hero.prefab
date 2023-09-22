@@ -172,7 +172,10 @@ MonoBehaviour:
   animController: {fileID: 5907536539816065283}
   interactDistance: 2
   foodToEat: {fileID: 0}
-  collider: {fileID: 598459467983525505}
+  currentLevel: {fileID: 4857593506788883920}
+  goundColliderMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!65 &598459467983525505
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -275,6 +278,27 @@ Transform:
 --- !u!1 &887267773945608643 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: dc1ea19aa4436b44892a5d8e452900b4, type: 3}
+  m_PrefabInstance: {fileID: 40915606557475986}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4857593506788883920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 887267773945608643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb60edbbacf23cb48a17d60f23c65e52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  coll: {fileID: 598459467983525505}
+  nextLevel: {fileID: 0}
+  houseHolder: {fileID: 1021921066917000728}
+--- !u!1 &1021921066917000728 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8160580469193985398, guid: dc1ea19aa4436b44892a5d8e452900b4, type: 3}
   m_PrefabInstance: {fileID: 40915606557475986}
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &5907536539816065283 stripped

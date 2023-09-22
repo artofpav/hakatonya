@@ -38,7 +38,9 @@ public class HeroController : MonoBehaviour
     public float interactDistance = 2;
     public Food foodToEat;
 
-    public BoxCollider collider;
+    public HeroLevel currentLevel;
+
+    public LayerMask goundColliderMask;
 
     private Vector3 velocity = new Vector3(0, 0, 0);
     private Rigidbody rBody;
@@ -46,7 +48,11 @@ public class HeroController : MonoBehaviour
     private float vertical;
     private Vector3 direction;
 
-    Quaternion toRotation;
+    private Quaternion toRotation;
+
+    private RaycastHit hit;
+    // note that the ray starts at 100 units
+    private Ray ray;
 
 
 
@@ -72,7 +78,7 @@ public class HeroController : MonoBehaviour
         }
 
         if (naked) {
-            radiation += radiationSpeed; //TODO нет максимума раддиации
+            radiation += radiationSpeed; //TODO пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             life -= radiationSpeed * 10;
         }
 
@@ -86,11 +92,11 @@ public class HeroController : MonoBehaviour
                 animController.SetBool("hidden", true);
                 rBody.useGravity = false;
                 rBody.velocity = new Vector3(0, 0, 0);
-                collider.enabled = false;
+                currentLevel.coll.enabled = false;
             } else if (Input.GetKeyUp(KeyCode.Space)) {
                 isHidden = false;
                 animController.SetBool("hidden", false);
-                collider.enabled = true;
+                currentLevel.coll.enabled = true;
                 rBody.useGravity = true;
             }
 
@@ -142,7 +148,16 @@ public class HeroController : MonoBehaviour
                 foodToEat.gameObject.SetActive(false);
             }
         }
-        
+
+        ray = new Ray(transform.position + Vector3.up * 100, Vector3.down);
+
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, goundColliderMask)) {
+            if (hit.collider != null & Vector3.Distance(hit.point, transform.position) > 0.2f) {
+                // this is where the gameobject is actually put on the ground
+                transform.position = new Vector3(transform.position.x, hit.point.y+0.2f, transform.position.z);
+            }
+        }
+
     }
 
     internal void EatFood(Food _food) {
@@ -154,6 +169,17 @@ public class HeroController : MonoBehaviour
     }
 
     public void Hit(float hitLevel) {
+        animController.SetTrigger("damage");
         life -= 0.1f + (0.1f * hitLevel);
     }
+    
+
+    public void GetHouse (House _house) {
+
+        _house.transform.parent = currentLevel.houseHolder.transform;
+        _house.transform.localPosition = Vector3.zero;
+        _house.transform.localRotation = new Quaternion(0,0,0,0);
+
+    }
+
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+
+    public float radius = 10;
     [SerializeField]
     public List<SpawnArea> areas;
 
@@ -20,11 +22,16 @@ public class Spawner : MonoBehaviour
         for (int i = 0; i < itemsToSpawn.Count; i++) {
             if (!itemsToSpawn[i].activeSelf) {
                 selectedArea = Random.Range(0, areas.Count);
-                spawnPosition = Random.insideUnitCircle * areas[selectedArea].radius;
+                spawnPosition = new Vector3(Random.insideUnitCircle.x * areas[selectedArea].radius, 0, Random.insideUnitCircle.y * areas[selectedArea].radius);
 
                 itemsToSpawn[i].transform.position = spawnPosition+ areas[selectedArea].transform.position ;
                 itemsToSpawn[i].SetActive(true);
             }
         }
+    }
+
+    private void OnDrawGizmos() {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, radius);
     }
 }

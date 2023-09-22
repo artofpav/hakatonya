@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\Obsoled\Strategy\StrategyController.cs" />
     <Compile Include="Assets\Scripts\Obsoled\TileBased\TileBasedController.cs" />
     <Compile Include="Assets\Scripts\Obsoled\TileBased\Tile.cs" />
+    <Compile Include="Assets\Scripts\HeroLevel.cs" />
     <Compile Include="Assets\Scripts\Obsoled\Hexagon\HexController.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Top-Down\TopDownController.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\PutObjectOnGround.cs" />
     <Compile Include="Assets\Scripts\Loader.cs" />
+    <Compile Include="Assets\Scripts\House.cs" />
     <Compile Include="Assets\Scripts\Obsoled\2.5Platformer\PlatformerPlayerController.cs" />
     <Compile Include="Assets\Scripts\Food.cs" />
   </ItemGroup>
