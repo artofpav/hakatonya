@@ -60,8 +60,9 @@ public class GameManager : MonoBehaviour
     }
 
     public void HitHero(Enemy enemy) {
-        if (enemy.level >= hero.level) {
-            hero.Hit(enemy.level - hero.level);
+        float l = Mathf.Floor(hero.level);
+        if (enemy.level >= l) {
+            hero.Hit(enemy.level - l);
         }
     }
 

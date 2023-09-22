@@ -11,14 +11,22 @@ public class HeroController : MonoBehaviour
     public float endurance = 1;
     public bool isHidden = false;
     public float life = 1;
-    public float radiation = 0;
+
+
     public float food = 1;
     public float weight = 1;
-    public float growLevel = 0.01f;
+    public float growLevel = 0.004f;
     public float level = 1;
+
 
     public float hungerSpeed = 0.01f;
     public float hungerDeathSpeed = 0.01f;
+
+
+    public bool naked = false;
+    public float radiation = 0;
+    public float radiationSpeed = 0.001f;
+
 
     public Animator animController;
 
@@ -51,6 +59,14 @@ public class HeroController : MonoBehaviour
         if (food < 0) {
             life -= hungerDeathSpeed * Time.deltaTime;
         }
+
+        if (naked) {
+            radiation += radiationSpeed; //TODO нет максимума раддиации
+        }
+
+        level += growLevel *(radiation+1);
+
+
 
         vertical = Input.GetAxis("Vertical");
         horizontal = Input.GetAxis("Horizontal");
