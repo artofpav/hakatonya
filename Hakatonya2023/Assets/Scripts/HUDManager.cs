@@ -13,7 +13,6 @@ public class HUDManager : MonoBehaviour
 
     public Slider growth;
 
-    public HeroController hero;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,10 +27,10 @@ public class HUDManager : MonoBehaviour
 
     public void UpdateHUD() {
 
-        life.value = hero.life;
-        food.value = hero.food;
-        radiation.value = hero.radiation;
+        life.value = GameManager.singl.hero.life;
+        food.value = GameManager.singl.hero.food;
+        radiation.value = GameManager.singl.hero.radiation;
 
-        growth.value = hero.level - Mathf.Floor(hero.level);
+        growth.value = GameManager.singl.hero.level - Mathf.Floor(GameManager.singl.hero.level);
     }
 }

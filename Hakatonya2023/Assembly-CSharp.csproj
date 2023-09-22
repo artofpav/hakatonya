@@ -58,18 +58,21 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Obsoled\3rdPerson\PersonController.cs" />
     <Compile Include="Assets\Scripts\HeroController.cs" />
-    <Compile Include="Assets\HUDManager.cs" />
+    <Compile Include="Assets\Scripts\Spawn\SpawnArea.cs" />
+    <Compile Include="Assets\Scripts\HUDManager.cs" />
     <Compile Include="Assets\Models\Container_ship\Scripts\FreeflightCamera.cs" />
     <Compile Include="Assets\Scripts\Obsoled\Strategy\StrategyController.cs" />
     <Compile Include="Assets\Scripts\Obsoled\TileBased\TileBasedController.cs" />
     <Compile Include="Assets\Scripts\Obsoled\TileBased\Tile.cs" />
     <Compile Include="Assets\Scripts\Obsoled\Hexagon\HexController.cs" />
-    <Compile Include="Assets\GameManager.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Top-Down\TopDownController.cs" />
-    <Compile Include="Assets\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Spawn\Spawner.cs" />
+    <Compile Include="Assets\Scripts\Enemy.cs" />
+    <Compile Include="Assets\Scripts\PutObjectOnGround.cs" />
     <Compile Include="Assets\Scripts\Loader.cs" />
     <Compile Include="Assets\Scripts\Obsoled\2.5Platformer\PlatformerPlayerController.cs" />
-    <Compile Include="Assets\Food.cs" />
+    <Compile Include="Assets\Scripts\Food.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Models\Free Low Poly Desert Pack\Materials\Shaders\Vertex_Color_Unlit.shader" />
@@ -81,7 +84,6 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\Models\Lowpoly_Wasteland_Props\Readme\Readme.txt" />
     <None Include="Assets\Models\BrokenVector\LowPolyShaders\README.txt" />
-    <None Include="Assets\test.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\Models\Container_ship\readme.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
