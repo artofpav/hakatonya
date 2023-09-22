@@ -11,7 +11,7 @@ public class Food : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         //if (other.gameObject.layer == LayerMask.NameToLayer("Hero")) {
             GameManager.singl.EatFood(this);
-            Destroy(this.gameObject);
+            gameObject.SetActive(false);
         //}
     }
 

@@ -63,6 +63,9 @@ public class GameManager : MonoBehaviour
         float l = Mathf.Floor(hero.level);
         if (enemy.level >= l) {
             hero.Hit(enemy.level - l);
+        } else {
+            EatFood(enemy);
+            enemy.gameObject.SetActive(false);
         }
     }
 

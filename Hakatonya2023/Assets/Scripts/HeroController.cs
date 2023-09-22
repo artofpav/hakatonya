@@ -50,8 +50,7 @@ public class HeroController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
 
         if (life <= 0) {
             GameManager.singl.GameOver();
@@ -70,7 +69,7 @@ public class HeroController : MonoBehaviour
             life -= radiationSpeed * 10;
         }
 
-        level += growLevel *(radiation+1);
+        level += growLevel * (radiation + 1);
 
 
 
@@ -81,10 +80,13 @@ public class HeroController : MonoBehaviour
 
 
         if (direction != Vector3.zero) {
+            animController.SetBool("walk", true);
             rBody.velocity = direction * speed * Time.deltaTime;
 
             toRotation = Quaternion.LookRotation(direction, Vector3.up);
             model.transform.rotation = Quaternion.RotateTowards(model.transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+        } else {
+            animController.SetBool("walk", false);
         }
 
         
