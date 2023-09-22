@@ -75,6 +75,7 @@ public class HeroController : MonoBehaviour
             food = 1;
         } else if (food < 0) {
             life -= hungerDeathSpeed * Time.deltaTime;
+            food = 0;
         }
 
         if (naked) {
@@ -145,6 +146,7 @@ public class HeroController : MonoBehaviour
             if (eatingTime <= 0) {
                 eating = false;
                 animController.SetBool("eating", false);
+                foodToEat.gameObject.transform.position = Vector3.zero;
                 foodToEat.gameObject.SetActive(false);
             }
         }
