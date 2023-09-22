@@ -161,13 +161,18 @@ MonoBehaviour:
   weight: 1
   growLevel: 0.0001
   level: 1
-  hungerSpeed: 0.05
+  hungerSpeed: 0.01
   hungerDeathSpeed: 0.015
+  eating: 0
+  eatMaxTime: 1
+  eatingTime: 0
   naked: 0
   radiation: 0
   radiationSpeed: 0.001
   animController: {fileID: 5907536539816065283}
   interactDistance: 2
+  foodToEat: {fileID: 0}
+  collider: {fileID: 598459467983525505}
 --- !u!65 &598459467983525505
 BoxCollider:
   m_ObjectHideFlags: 0

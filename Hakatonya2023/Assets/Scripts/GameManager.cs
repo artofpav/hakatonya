@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
 
         if (singl == null) {
             singl = this;
-            DontDestroyOnLoad(gameObject);
+           // DontDestroyOnLoad(gameObject);
 
         } else if (singl != this) {
             Destroy(gameObject);
@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void EatFood(Food food) {
-        hero.food += food.calories;
+        hero.EatFood(food);
     }
 
     public void GameOver() {

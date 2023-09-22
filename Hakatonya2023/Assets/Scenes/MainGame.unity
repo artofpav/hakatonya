@@ -706,6 +706,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Food (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2256259216354963653, guid: aa1b6a00cd384714dbe9b7e0691a7095, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa1b6a00cd384714dbe9b7e0691a7095, type: 3}
 --- !u!4 &1681502957 stripped
@@ -974,14 +978,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3583845450575843437, guid: 0c3e199f1ad113649b22927c3202793f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 7.89
-      objectReference: {fileID: 0}
-    - target: {fileID: 3583845450575843437, guid: 0c3e199f1ad113649b22927c3202793f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -8.45
-      objectReference: {fileID: 0}
     - target: {fileID: 3583845450601780249, guid: 0c3e199f1ad113649b22927c3202793f, type: 3}
       propertyPath: m_Name
       value: Hero
@@ -1030,13 +1026,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3887947161973799323, guid: 0c3e199f1ad113649b22927c3202793f, type: 3}
-      propertyPath: hungerSpeed
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4648395228719133222, guid: 0c3e199f1ad113649b22927c3202793f, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a9bf57d0ed1290e4794ab3b2e182c741, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c3e199f1ad113649b22927c3202793f, type: 3}
