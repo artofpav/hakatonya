@@ -9,3 +9,6 @@ Hakatonya2023/obj/Debug/Assembly-CSharp.csproj.AssemblyReference.cache
 *.log
 *.log
 *.dwlt
+*.log
+Hakatonya2023/Logs/shadercompiler-UnityShaderCompiler.exe0.log
+*.dwlt
