@@ -4,14 +4,6 @@ using UnityEngine;
 
 public class EnemyNoRotation : Enemy
 {
-    private GameObject target;
-
-    private Vector3 targetPosition;
-    private Vector3 wanderPoint;
-    private RaycastHit hit;
-    // note that the ray starts at 100 units
-    private Ray ray;
-
 
     private void OnCollisionEnter(Collision collision) {
         if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Hero")) {

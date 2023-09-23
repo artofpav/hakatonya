@@ -98,7 +98,7 @@ public class HeroController : MonoBehaviour
         }
 
         if (naked) {
-            radiation += radiationSpeed; //TODO ��� ��������� ���������
+            radiation += radiationSpeed; 
             life -= radiationSpeed * 10;
         }
 
@@ -192,18 +192,19 @@ public class HeroController : MonoBehaviour
         targetPosition = transform.position;
         //        Vector3 rayCastOrigin = sphereCastOrigin.position;
         //        rayCastOrigin.y = rayCastOrigin.y + 0.2f;
-
-        if (Physics.SphereCast(sphereCastOrigin.position, sphereCastRadius, -Vector3.up, out hit, goundColliderMask)) {
-            if (hit.collider != null & Vector3.Distance(hit.point, transform.position) < 0.2f) {
-                // this is where the gameobject is actually put on the ground
-                targetPosition.y = hit.point.y;
-                transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * 5);
-            } else {
-                if (Physics.Raycast(ray, out hit, Mathf.Infinity, goundColliderMask)) {
-                    if (hit.collider != null) {
-                        targetPosition.y = hit.point.y;
-                        // this is where the gameobject is actually put on the ground
-                        transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * 5);
+        if (!isHidden) {
+            if (Physics.SphereCast(sphereCastOrigin.position, sphereCastRadius, -Vector3.up, out hit, goundColliderMask)) {
+                if (hit.collider != null & Vector3.Distance(hit.point, transform.position) < 0.2f) {
+                    // this is where the gameobject is actually put on the ground
+                    targetPosition.y = hit.point.y;
+                    transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * 5);
+                } else {
+                    if (Physics.Raycast(ray, out hit, Mathf.Infinity, goundColliderMask)) {
+                        if (hit.collider != null) {
+                            targetPosition.y = hit.point.y;
+                            // this is where the gameobject is actually put on the ground
+                            transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * 5);
+                        }
                     }
                 }
             }
@@ -212,6 +213,7 @@ public class HeroController : MonoBehaviour
     }
 
     internal void EatFood(Food _food) {
+        float foodModifier = _food.level / level;
         level += (_food.calories / Mathf.Floor(level)) * (radiation + 1);
         foodToEat = _food;
         eating = true;
