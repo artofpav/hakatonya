@@ -46,20 +46,8 @@ public class PersonController: MonoBehaviour
 
         if (!inAir) {
             rBody.velocity = ((transform.right * horizontal) + (transform.forward * vertical)) * speed;
-        }/* else {
-            float yVelocity = rBody.velocity.y;
-            if ((Mathf.Abs(rBody.velocity.x) + Mathf.Abs(rBody.velocity.x)/2) < speed / 2) {
-
-                rBody.velocity = ((transform.right * horizontal / 2) + (transform.forward * vertical / 2)) * speed;
-
-            } else { 
-                
-            }
-
-            rBody.velocity = new Vector3(rBody.velocity.x, yVelocity, rBody.velocity.z);
-        
         }
-        */
+
     
 
     }

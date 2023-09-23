@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public static GameManager singl;
 
     public HUDManager hud;
-    public HeroController hero;
+    public HeroControllerBehind hero;
     public List<Spawner> spawners;
 
     public CameraShake cameraShake;
