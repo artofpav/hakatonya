@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\Obsoled\Hexagon\HexController.cs" />
     <Compile Include="Assets\Scripts\Spawn\Spawner.cs" />
     <Compile Include="Assets\Scripts\AI\Enemy.cs" />
+    <Compile Include="Assets\Scripts\HeroControllerBehind.cs" />
     <Compile Include="Assets\Scripts\PutObjectOnGround.cs" />
     <Compile Include="Assets\CutSceneManager.cs" />
     <Compile Include="Assets\Scripts\Food.cs" />
