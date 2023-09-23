@@ -65,6 +65,14 @@ public class HeroController : MonoBehaviour
     private float damageModifier = 1;
     private float hungerModifier = 1;
 
+    public AudioSource hideSound;
+    public AudioSource runSound;
+    public AudioSource hitSound;
+    public AudioSource eatSound;
+    public AudioSource deathSound;
+    public AudioSource levelUpSound;
+
+
 
     // Start is called before the first frame update
     void Start() {
@@ -75,7 +83,7 @@ public class HeroController : MonoBehaviour
     void Update() {
 
         if (life <= 0) {
-
+            deathSound.Play();
             level = Mathf.Floor(level) - 1;
             if (level <= 0) {
                 GameManager.singl.GameOver();
@@ -107,6 +115,7 @@ public class HeroController : MonoBehaviour
 
         if (Mathf.Floor(level) > currentLevel.level && level < 6) {
             if (currentLevel.nextLevel != null) {
+                levelUpSound.Play();
                 SetLevel(currentLevel.nextLevel);
             }
         }
@@ -117,11 +126,11 @@ public class HeroController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space)) {
                 isHidden = true;
                 animController.SetBool("hidden", true);
-                currentLevel.dust.Stop();
+                //currentLevel.dust.Stop();
                 rBody.useGravity = false;
                 rBody.velocity = new Vector3(0, 0, 0);
                 currentLevel.coll.enabled = false;
-
+                hideSound.Play();
                 StartCoroutine(GameManager.singl.cameraShake.Shake(.5f, .15f));
             } else if (Input.GetKeyUp(KeyCode.Space)) {
                 isHidden = false;
@@ -142,14 +151,16 @@ public class HeroController : MonoBehaviour
 
                 if (direction != Vector3.zero) {
                     animController.SetBool("walk", true);
-                    currentLevel.dust.Play();
+                    runSound.Play();
+                    //currentLevel.dust.Play();
                     rBody.velocity = direction * speed * speedModifier * Time.deltaTime;
 
                     toRotation = Quaternion.LookRotation(direction, Vector3.up);
                     model.transform.rotation = Quaternion.RotateTowards(model.transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
                 } else {
-                    currentLevel.dust.Stop();
+                    //currentLevel.dust.Stop();
                     animController.SetBool("walk", false);
+                    runSound.Stop();
                 }
 
 
@@ -169,9 +180,7 @@ public class HeroController : MonoBehaviour
                     rBody.velocity = new Vector3(rBody.velocity.x, rBody.velocity.y, 0);
                 }
 
-            } else {
-                currentLevel.dust.Stop();
-            }
+            } 
 
 
         } else { //finish eating
@@ -213,6 +222,7 @@ public class HeroController : MonoBehaviour
     }
 
     internal void EatFood(Food _food) {
+        eatSound.Play();
         float foodModifier = _food.level / level;
         level += (_food.calories * foodModifier) * (radiation + 1);
         foodToEat = _food;
@@ -223,6 +233,7 @@ public class HeroController : MonoBehaviour
     }
 
     public void Hit(float hitLevel) {
+        hitSound.Play();
         animController.SetTrigger("damage");
         life -= (0.1f + (0.1f * hitLevel)) * damageModifier;
     }
