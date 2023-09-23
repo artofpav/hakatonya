@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class HeroLevel : MonoBehaviour
 {
@@ -26,6 +27,6 @@ public class HeroLevel : MonoBehaviour
     
     public GameObject houseHolder;
     public GameObject cam;
-    public ParticleSystem dust;
+    public VisualEffect dust;
 
 }
