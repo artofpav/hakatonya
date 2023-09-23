@@ -8123,6 +8123,10 @@ PrefabInstance:
       propertyPath: itemsToSpawn.Array.data[15]
       value: 
       objectReference: {fileID: 1453793185}
+    - target: {fileID: 4620820090653767282, guid: c527503b7276e9e4c896c301c2098e92, type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 4721996938899771889, guid: c527503b7276e9e4c896c301c2098e92, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -8143,6 +8147,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 37d0ccdd1ea8c974f983bde32b687340, type: 2}
+    - target: {fileID: 6364835414182988578, guid: c527503b7276e9e4c896c301c2098e92, type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 6879559355618435066, guid: c527503b7276e9e4c896c301c2098e92, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -8215,9 +8223,17 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7799881292830861721, guid: c527503b7276e9e4c896c301c2098e92, type: 3}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7826962151420746316, guid: c527503b7276e9e4c896c301c2098e92, type: 3}
       propertyPath: m_LocalPosition.y
       value: 42.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7978252542146159791, guid: c527503b7276e9e4c896c301c2098e92, type: 3}
+      propertyPath: m_RootOrder
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 8230114380770451893, guid: c527503b7276e9e4c896c301c2098e92, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8230,6 +8246,14 @@ PrefabInstance:
     - target: {fileID: 8517294658703035837, guid: c527503b7276e9e4c896c301c2098e92, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760315586130805910, guid: c527503b7276e9e4c896c301c2098e92, type: 3}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8869298750858661735, guid: c527503b7276e9e4c896c301c2098e92, type: 3}
+      propertyPath: m_RootOrder
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 9072793420333676697, guid: c527503b7276e9e4c896c301c2098e92, type: 3}
       propertyPath: m_StaticEditorFlags
