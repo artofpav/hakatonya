@@ -214,7 +214,7 @@ public class HeroController : MonoBehaviour
 
     internal void EatFood(Food _food) {
         float foodModifier = _food.level / level;
-        level += (_food.calories / Mathf.Floor(level)) * (radiation + 1);
+        level += (_food.calories * foodModifier) * (radiation + 1);
         foodToEat = _food;
         eating = true;
         animController.SetBool("eating", true);
