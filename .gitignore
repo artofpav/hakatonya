@@ -6,3 +6,6 @@ Hakatonya2023/.vs/Hakatonya2023/v16/.suo
 *.cache
 Hakatonya2023/obj/Debug/Assembly-CSharp.csproj.AssemblyReference.cache
 *.dwlt
+*.log
+*.log
+*.dwlt

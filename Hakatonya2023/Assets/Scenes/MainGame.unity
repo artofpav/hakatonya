@@ -1124,10 +1124,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1178112293}
     m_Modifications:
-    - target: {fileID: 2071709268689288584, guid: a12603f44bdc83149b9a7dd3748031b9, type: 3}
-      propertyPath: awarnesDistance
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 5545645014163466308, guid: a12603f44bdc83149b9a7dd3748031b9, type: 3}
       propertyPath: m_Name
       value: Enemy_03
