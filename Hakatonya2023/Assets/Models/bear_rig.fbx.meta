@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2f4d70f011d031348a6c39a3057cccf3
+guid: cb8c82a8d19e04d4fa60c355596fe694
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -89,7 +89,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: opossum_root_j
+    rootMotionBoneName: bear_root_j
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
