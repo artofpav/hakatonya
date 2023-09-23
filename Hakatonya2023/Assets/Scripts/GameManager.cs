@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     private void UpdateHUD() {
 
         for (int i = 0; i < spawners.Count; i++) {
-            if (Vector3.Distance(spawners[i].transform.position, hero.transform.position) > spawners[i].radius + 5) {
+            if (Vector3.Distance(spawners[i].transform.position, hero.transform.position) > spawners[i].radius *2) {
                 spawners[i].gameObject.SetActive(false);
             } else {
                 spawners[i].gameObject.SetActive(true);

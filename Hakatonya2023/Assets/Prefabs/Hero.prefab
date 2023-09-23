@@ -15241,6 +15241,10 @@ GameObject:
   - component: {fileID: 3887947161973799323}
   - component: {fileID: 8935587205848655021}
   - component: {fileID: 2092852340}
+  - component: {fileID: 6086732312540642546}
+  - component: {fileID: 8769134393227033142}
+  - component: {fileID: 6461416541823662807}
+  - component: {fileID: 8824465813850834404}
   m_Layer: 7
   m_Name: Hero
   m_TagString: Untagged
@@ -15318,7 +15322,7 @@ MonoBehaviour:
   eatingTime: 0
   naked: 0
   radiation: 0
-  radiationSpeed: 0.001
+  radiationSpeed: -2.83
   animController: {fileID: 5907536539816065283}
   interactDistance: 2
   foodToEat: {fileID: 0}
@@ -15354,10 +15358,62 @@ SphereCollider:
   m_GameObject: {fileID: 3583845450601780249}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 0.98
+  m_Center: {x: 0, y: 1.42, z: 0}
+--- !u!135 &6086732312540642546
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3583845450601780249}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 1.47
+  m_Center: {x: 0, y: 2.01, z: 0}
+--- !u!135 &8769134393227033142
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3583845450601780249}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.93
-  m_Center: {x: 0, y: 1.21, z: 0}
+  m_Radius: 3.88
+  m_Center: {x: 0, y: 5.13, z: 0}
+--- !u!135 &6461416541823662807
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3583845450601780249}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 5.47
+  m_Center: {x: 0, y: 6.35, z: 0}
+--- !u!135 &8824465813850834404
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3583845450601780249}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 12.15
+  m_Center: {x: 0, y: 15.3, z: 0}
 --- !u!1 &5171728691309480214
 GameObject:
   m_ObjectHideFlags: 0
@@ -25796,8 +25852,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 2
-  prevLevel: {fileID: 4857593506788883920}
-  nextLevel: {fileID: 0}
+  prevLevel: {fileID: 5162230194689543723}
+  nextLevel: {fileID: 1909827437956827090}
   animController: {fileID: 8739870186953590383}
   speed: 16
   enduranceLossSpeed: 1
@@ -25808,9 +25864,9 @@ MonoBehaviour:
   radiationSpeed: 0.001
   sphereCastOrigin: {fileID: 3131860338314542849}
   sphereCastRadius: 4
-  coll: {fileID: 2092852340}
+  coll: {fileID: 6461416541823662807}
   houseHolder: {fileID: 2782977472379373940}
-  cam: {fileID: 6358162216180198635}
+  cam: {fileID: 7891305593526941356}
   dust: {fileID: 526908328938207941}
 --- !u!1 &2782977472379373940 stripped
 GameObject:
@@ -25912,7 +25968,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: dc1ea19aa4436b44892a5d8e452900b4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: dc1ea19aa4436b44892a5d8e452900b4, type: 3}
       propertyPath: m_Controller
@@ -25954,7 +26010,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 2
   prevLevel: {fileID: 4857593506788883920}
-  nextLevel: {fileID: 0}
+  nextLevel: {fileID: 5162230194689543723}
   animController: {fileID: 528364725841516461}
   speed: 16
   enduranceLossSpeed: 1
@@ -25965,7 +26021,7 @@ MonoBehaviour:
   radiationSpeed: 0.001
   sphereCastOrigin: {fileID: 4224178549546003451}
   sphereCastRadius: 4
-  coll: {fileID: 2092852340}
+  coll: {fileID: 6086732312540642546}
   houseHolder: {fileID: 6377235671166376118}
   cam: {fileID: 6358162216180198635}
   dust: {fileID: 8232405487187999812}
@@ -26090,8 +26146,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 2
-  prevLevel: {fileID: 4857593506788883920}
-  nextLevel: {fileID: 0}
+  prevLevel: {fileID: 7586362272612320944}
+  nextLevel: {fileID: 1909827437956827090}
   animController: {fileID: 4564647517832795010}
   speed: 16
   enduranceLossSpeed: 1
@@ -26102,9 +26158,9 @@ MonoBehaviour:
   radiationSpeed: 0.001
   sphereCastOrigin: {fileID: 6443580189053324231}
   sphereCastRadius: 4
-  coll: {fileID: 2092852340}
+  coll: {fileID: 8769134393227033142}
   houseHolder: {fileID: 6957424113924824217}
-  cam: {fileID: 6358162216180198635}
+  cam: {fileID: 2136655256012339704}
   dust: {fileID: 100829513872489353}
 --- !u!4 &7618065746441472504 stripped
 Transform:
@@ -26232,7 +26288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 2
-  prevLevel: {fileID: 4857593506788883920}
+  prevLevel: {fileID: 1909827437956827090}
   nextLevel: {fileID: 0}
   animController: {fileID: 3088136605243925017}
   speed: 16
@@ -26244,9 +26300,9 @@ MonoBehaviour:
   radiationSpeed: 0.001
   sphereCastOrigin: {fileID: 1587792023687945161}
   sphereCastRadius: 4
-  coll: {fileID: 2092852340}
+  coll: {fileID: 8824465813850834404}
   houseHolder: {fileID: 8434711056236080386}
-  cam: {fileID: 6358162216180198635}
+  cam: {fileID: 2622415033861234498}
   dust: {fileID: 1565242494885152938}
 --- !u!4 &8951870961914493027 stripped
 Transform:

@@ -230,6 +230,13 @@ public class HeroController : MonoBehaviour
 
     public void GetHouse(House _house) {
 
+        if (currentHouse != null) {
+            speedModifier = 1;
+            damageModifier = 1;
+            hungerModifier = 1;
+            Destroy(currentHouse);
+        }
+
         currentHouse = _house;
         _house.transform.parent = currentLevel.houseHolder.transform;
         _house.transform.localPosition = Vector3.zero;
