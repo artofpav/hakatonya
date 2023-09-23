@@ -184,7 +184,7 @@ public class HeroController : MonoBehaviour
 
 
         } else { //finish eating
-            currentLevel.dust.Stop();
+            //currentLevel.dust.Stop();
             rBody.velocity = new Vector3(0, 0, 0);
             //= Quaternion.RotateTowards(model.transform.rotation, Quaternion.LookRotation(foodToEat.transform.position, Vector3.up), rotationSpeed * (Time.deltaTime*10));
             eatingTime -= Time.deltaTime;
@@ -240,6 +240,9 @@ public class HeroController : MonoBehaviour
 
 
     public void GetHouse(House _house) {
+
+        levelUpSound.Play();
+
 
         if (currentHouse != null) {
             speedModifier = 1;
