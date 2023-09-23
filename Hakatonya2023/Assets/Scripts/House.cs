@@ -8,6 +8,10 @@ public class House : MonoBehaviour
 
     public Collider coll;
 
+    public float speedModifier = 1;
+    public float damageModifier = 1;
+    public float hungerModifier = 1;
+
     private void OnTriggerEnter(Collider other) {
         
     }

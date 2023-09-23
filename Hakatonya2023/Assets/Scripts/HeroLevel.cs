@@ -22,7 +22,6 @@ public class HeroLevel : MonoBehaviour
     public Transform sphereCastOrigin;
     public float sphereCastRadius = 2f;
 
-
     public Collider coll;
     
     public GameObject houseHolder;

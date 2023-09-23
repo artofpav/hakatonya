@@ -7,7 +7,7 @@ public class HeroController : MonoBehaviour
 {
     public bool dontEat = false;
     public GameObject model;
-    public float speed = 1 ;
+    public float speed = 1;
     public float rotationSpeed = 90;
     public float maxSpeed;
     public bool rush = false;
@@ -61,10 +61,13 @@ public class HeroController : MonoBehaviour
     private Ray ray;
 
 
+    private float speedModifier = 1;
+    private float damageModifier = 1;
+    private float hungerModifier = 1;
+
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         rBody = GetComponent<Rigidbody>();
     }
 
@@ -84,7 +87,7 @@ public class HeroController : MonoBehaviour
 
 
         if (!dontEat) {
-            food -= hungerSpeed * Time.deltaTime;
+            food -= hungerSpeed * Time.deltaTime * hungerModifier;
         }
 
         if (food > 1) {
@@ -99,10 +102,10 @@ public class HeroController : MonoBehaviour
             life -= radiationSpeed * 10;
         }
 
-        level += (growLevel/Mathf.Floor(level)) * (radiation + 1);
 
 
-        if ( Mathf.Floor(level) > currentLevel.level && level < 6) {
+
+        if (Mathf.Floor(level) > currentLevel.level && level < 6) {
             if (currentLevel.nextLevel != null) {
                 SetLevel(currentLevel.nextLevel);
             }
@@ -140,7 +143,7 @@ public class HeroController : MonoBehaviour
                 if (direction != Vector3.zero) {
                     animController.SetBool("walk", true);
                     currentLevel.dust.Play();
-                    rBody.velocity = direction * speed * Time.deltaTime;
+                    rBody.velocity = direction * speed * speedModifier * Time.deltaTime;
 
                     toRotation = Quaternion.LookRotation(direction, Vector3.up);
                     model.transform.rotation = Quaternion.RotateTowards(model.transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
@@ -187,8 +190,8 @@ public class HeroController : MonoBehaviour
         ray = new Ray(transform.position + Vector3.up * 100, Vector3.down);
 
         targetPosition = transform.position;
-//        Vector3 rayCastOrigin = sphereCastOrigin.position;
-//        rayCastOrigin.y = rayCastOrigin.y + 0.2f;
+        //        Vector3 rayCastOrigin = sphereCastOrigin.position;
+        //        rayCastOrigin.y = rayCastOrigin.y + 0.2f;
 
         if (Physics.SphereCast(sphereCastOrigin.position, sphereCastRadius, -Vector3.up, out hit, goundColliderMask)) {
             if (hit.collider != null & Vector3.Distance(hit.point, transform.position) < 0.2f) {
@@ -200,7 +203,7 @@ public class HeroController : MonoBehaviour
                     if (hit.collider != null) {
                         targetPosition.y = hit.point.y;
                         // this is where the gameobject is actually put on the ground
-                        transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime*5);
+                        transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * 5);
                     }
                 }
             }
@@ -209,6 +212,7 @@ public class HeroController : MonoBehaviour
     }
 
     internal void EatFood(Food _food) {
+        level += (_food.calories / Mathf.Floor(level)) * (radiation + 1);
         foodToEat = _food;
         eating = true;
         animController.SetBool("eating", true);
@@ -218,7 +222,7 @@ public class HeroController : MonoBehaviour
 
     public void Hit(float hitLevel) {
         animController.SetTrigger("damage");
-        life -= 0.1f + (0.1f * hitLevel);
+        life -= (0.1f + (0.1f * hitLevel)) * damageModifier;
     }
 
 
@@ -228,6 +232,9 @@ public class HeroController : MonoBehaviour
         _house.transform.parent = currentLevel.houseHolder.transform;
         _house.transform.localPosition = Vector3.zero;
         _house.transform.localRotation = new Quaternion(0, 0, 0, 0);
+        speedModifier = _house.speedModifier;
+        damageModifier = _house.damageModifier;
+        hungerModifier = _house.hungerModifier;
 
 
     }
@@ -239,12 +246,15 @@ public class HeroController : MonoBehaviour
         currentLevel.gameObject.SetActive(false);
         currentLevel.cam.SetActive(false);
 
-        currentLevel = currentLevel.nextLevel;
+        currentLevel = _targetLevel;
 
         currentLevel.gameObject.SetActive(true);
         currentLevel.cam.SetActive(true);
 
         if (currentHouse != null) {
+            speedModifier = 1;
+            damageModifier = 1;
+            hungerModifier = 1;
             Destroy(currentHouse);
         }
 
@@ -261,6 +271,8 @@ public class HeroController : MonoBehaviour
 
         sphereCastOrigin = currentLevel.sphereCastOrigin;
         sphereCastRadius = currentLevel.sphereCastRadius;
+
+
 
 
     }
