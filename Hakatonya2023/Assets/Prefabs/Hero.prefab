@@ -17099,6 +17099,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa9fda10a7588314e980d0e220679a3c, type: 3}
+--- !u!1 &2562959347776243582 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -1134011145227970793, guid: fa9fda10a7588314e980d0e220679a3c, type: 3}
+  m_PrefabInstance: {fileID: 6039990302253650025}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6077856533618587522 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fa9fda10a7588314e980d0e220679a3c, type: 3}
@@ -17155,7 +17160,7 @@ MonoBehaviour:
   sphereCastOrigin: {fileID: 6443580189053324231}
   sphereCastRadius: 4
   coll: {fileID: 8769134393227033142}
-  houseHolder: {fileID: 0}
+  houseHolder: {fileID: 2562959347776243582}
   cam: {fileID: 2136655256012339704}
   dust: {fileID: 100829513872489353}
 --- !u!1001 &8592194721836290019
