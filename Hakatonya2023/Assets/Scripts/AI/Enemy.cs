@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class Enemy : Food
 {
-    private GameObject target;
+    protected GameObject target;
     public enum EnemyState {Idle, Attack, Run}
 
-    public float level;
     public EnemyState state = EnemyState.Idle;
     public float speed = 1;
 
@@ -16,11 +15,11 @@ public class Enemy : Food
     public Animator anim;
     //public Rigidbody rBody;
 
-    private Vector3 targetPosition;
-    private Vector3 wanderPoint;
-    private RaycastHit hit;
+    protected Vector3 targetPosition;
+    protected Vector3 wanderPoint;
+    protected RaycastHit hit;
     // note that the ray starts at 100 units
-    private Ray ray;
+    protected Ray ray;
     public LayerMask goundColliderMask;
 
     public float riseDistance = 0.2f;

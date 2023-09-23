@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69bb6a9690067b346998ab8a33fe91c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  calories: 0.1
+  calories: 0.2
   level: 0
   state: 0
   speed: 7.6
@@ -175,6 +175,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7439c5d56d39e7844919046f4c34b459, type: 2}
+    - target: {fileID: 299981789843714428, guid: debeefd7b19b4314492be99d5f3433b4, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2e08b69057079c5438af77f34e53a2a6, type: 2}
     - target: {fileID: 919132149155446097, guid: debeefd7b19b4314492be99d5f3433b4, type: 3}
       propertyPath: m_Name
       value: Evil_crab_rig

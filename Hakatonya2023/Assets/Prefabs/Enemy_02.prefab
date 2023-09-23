@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6112853486770098949
 Transform:
   m_ObjectHideFlags: 0
@@ -175,6 +175,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 37d0ccdd1ea8c974f983bde32b687340, type: 2}
+    - target: {fileID: 299981789843714428, guid: debeefd7b19b4314492be99d5f3433b4, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2e08b69057079c5438af77f34e53a2a6, type: 2}
     - target: {fileID: 919132149155446097, guid: debeefd7b19b4314492be99d5f3433b4, type: 3}
       propertyPath: m_Name
       value: Evil_crab_rig
