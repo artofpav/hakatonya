@@ -16862,7 +16862,7 @@ MonoBehaviour:
   growLevel: 0.001
   hungerSpeed: 0.01
   hungerDeathSpeed: 0.01
-  eatMaxTime: 0.19
+  eatMaxTime: 0.08
   radiationSpeed: 0.001
   sphereCastOrigin: {fileID: 54758087}
   sphereCastRadius: 2
@@ -16999,7 +16999,7 @@ MonoBehaviour:
   growLevel: 0.004
   hungerSpeed: 0.01
   hungerDeathSpeed: 0.01
-  eatMaxTime: 0.19
+  eatMaxTime: 0.08
   radiationSpeed: 0.001
   sphereCastOrigin: {fileID: 3131860338314542849}
   sphereCastRadius: 4
@@ -17151,7 +17151,7 @@ MonoBehaviour:
   growLevel: 0.004
   hungerSpeed: 0.01
   hungerDeathSpeed: 0.01
-  eatMaxTime: 0.19
+  eatMaxTime: 0.08
   radiationSpeed: 0.001
   sphereCastOrigin: {fileID: 6443580189053324231}
   sphereCastRadius: 4
@@ -17243,6 +17243,14 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 22100000, guid: c2af9248a30bd8c43a2ae29c2155d871, type: 2}
+    - target: {fileID: 8156467702482136056, guid: 4235e76befb66ba4dbecedd17313fbce, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: edddf2f06281aca468edfbbb0ea5407d, type: 2}
+    - target: {fileID: 8156467702482136056, guid: 4235e76befb66ba4dbecedd17313fbce, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2e08b69057079c5438af77f34e53a2a6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4235e76befb66ba4dbecedd17313fbce, type: 3}
 --- !u!1 &2225529762353340406 stripped
@@ -17286,7 +17294,7 @@ MonoBehaviour:
   growLevel: 0.0005
   hungerSpeed: 0.01
   hungerDeathSpeed: 0.01
-  eatMaxTime: 0.19
+  eatMaxTime: 0.08
   radiationSpeed: 0.001
   sphereCastOrigin: {fileID: 54758087}
   sphereCastRadius: 4
@@ -17423,7 +17431,7 @@ MonoBehaviour:
   growLevel: 0.004
   hungerSpeed: 0.01
   hungerDeathSpeed: 0.01
-  eatMaxTime: 0.19
+  eatMaxTime: 0.08
   radiationSpeed: 0.001
   sphereCastOrigin: {fileID: 1587792023687945161}
   sphereCastRadius: 4

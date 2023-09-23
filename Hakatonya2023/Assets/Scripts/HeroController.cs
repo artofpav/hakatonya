@@ -248,7 +248,8 @@ public class HeroController : MonoBehaviour
             speedModifier = 1;
             damageModifier = 1;
             hungerModifier = 1;
-            Destroy(currentHouse);
+
+            Destroy(currentHouse.gameObject);
         }
 
         currentHouse = _house;

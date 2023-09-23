@@ -129,8 +129,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7786b38a31f30e4478a6205adac12063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
+  level: 3
   coll: {fileID: 801681225}
+  speedModifier: 1
+  damageModifier: 1
+  hungerModifier: 1
 --- !u!135 &801681225
 SphereCollider:
   m_ObjectHideFlags: 0
