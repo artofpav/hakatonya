@@ -25,6 +25,7 @@ public class Spawner : MonoBehaviour
                 spawnPosition = new Vector3(Random.insideUnitCircle.x * areas[selectedArea].radius, 0, Random.insideUnitCircle.y * areas[selectedArea].radius);
 
                 itemsToSpawn[i].transform.position = spawnPosition+ areas[selectedArea].transform.position ;
+                itemsToSpawn[i].transform.rotation = Quaternion.Euler(0,Random.Range(0,360),0);
                 itemsToSpawn[i].SetActive(true);
             }
         }

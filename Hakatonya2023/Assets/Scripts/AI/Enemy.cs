@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class Enemy : Food
 {
-    private GameObject target;
+    protected GameObject target;
     public enum EnemyState {Idle, Attack, Run}
 
-    public float level;
     public EnemyState state = EnemyState.Idle;
     public float speed = 1;
 
@@ -16,12 +15,14 @@ public class Enemy : Food
     public Animator anim;
     //public Rigidbody rBody;
 
-    private Vector3 targetPosition;
-    private Vector3 wanderPoint;
-    private RaycastHit hit;
+    protected Vector3 targetPosition;
+    protected Vector3 wanderPoint;
+    protected RaycastHit hit;
     // note that the ray starts at 100 units
-    private Ray ray;
+    protected Ray ray;
     public LayerMask goundColliderMask;
+
+    public float riseDistance = 0.2f;
 
 
     private void OnCollisionEnter(Collision collision) {
@@ -46,7 +47,7 @@ public class Enemy : Food
 
 
             if (Vector3.Distance(transform.position, GameManager.singl.hero.transform.position) < awarnesDistance && !GameManager.singl.hero.isHidden) {
-                if (GameManager.singl.hero.level <= level+1) {
+                if (Mathf.Floor(GameManager.singl.hero.level) <= level) {
                     state = EnemyState.Attack; 
                 } else {
                     state = EnemyState.Run;
@@ -66,7 +67,7 @@ public class Enemy : Food
                 if (Physics.Raycast(ray, out hit, Mathf.Infinity, goundColliderMask)) {
 
                     // this is where the gameobject is actually put on the ground
-                    target.transform.position = new Vector3(target.transform.position.x, hit.point.y + 0.2f, target.transform.position.z);
+                    target.transform.position = new Vector3(target.transform.position.x, hit.point.y + riseDistance, target.transform.position.z);
 
                 }
             } 
@@ -83,9 +84,9 @@ public class Enemy : Food
             ray = new Ray(transform.position + Vector3.up * 100, Vector3.down);
 
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, goundColliderMask)) {
-                if (hit.collider != null & Vector3.Distance(hit.point, transform.position) > 0.2f) {
+                if (hit.collider != null & Vector3.Distance(hit.point, transform.position) > riseDistance) {
                     // this is where the gameobject is actually put on the ground
-                    transform.position = new Vector3(transform.position.x, hit.point.y + 0.2f, transform.position.z);
+                    transform.position = new Vector3(transform.position.x, hit.point.y + riseDistance, transform.position.z);
                 }
             }
 
@@ -105,9 +106,9 @@ public class Enemy : Food
             ray = new Ray(transform.position + Vector3.up * 100, Vector3.down);
 
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, goundColliderMask)) {
-                if (hit.collider != null & Vector3.Distance(hit.point, transform.position) > 0.2f) {
+                if (hit.collider != null & Vector3.Distance(hit.point, transform.position) > riseDistance) {
                     // this is where the gameobject is actually put on the ground
-                    transform.position = new Vector3(transform.position.x, hit.point.y + 0.2f, transform.position.z);
+                    transform.position = new Vector3(transform.position.x, hit.point.y + riseDistance, transform.position.z);
                 }
             }
         } else if (state == EnemyState.Run) {
@@ -126,9 +127,9 @@ public class Enemy : Food
             ray = new Ray(transform.position + Vector3.up * 100, Vector3.down);
 
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, goundColliderMask)) {
-                if (hit.collider != null & Vector3.Distance(hit.point, transform.position) > 0.2f) {
+                if (hit.collider != null & Vector3.Distance(hit.point, transform.position) > riseDistance) {
                     // this is where the gameobject is actually put on the ground
-                    transform.position = new Vector3(transform.position.x, hit.point.y + 0.2f, transform.position.z);
+                    transform.position = new Vector3(transform.position.x, hit.point.y + riseDistance, transform.position.z);
                 }
             }
 
