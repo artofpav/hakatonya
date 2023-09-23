@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
 
     public HUDManager hud;
     public HeroController hero;
+    public List<Spawner> spawners;
+
+    public CameraShake cameraShake;
 
     Ray ray;
     RaycastHit hit;
@@ -43,18 +46,13 @@ public class GameManager : MonoBehaviour
 
     private void UpdateHUD() {
 
-       /* ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit)) {
-            if (Input.GetMouseButtonDown(0))
-                //print(hit.collider.name);
-                if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Food")) {
-                    if (Vector3.Distance(hero.transform.position, hit.collider.transform.position) <= hero.interactDistance) {
-                        hero.food += hit.collider.GetComponent<Food>().calories;
-                        Destroy(hit.collider.gameObject);
-                    }
-                }
-                
-        }*/
+        for (int i = 0; i < spawners.Count; i++) {
+            if (Vector3.Distance(spawners[i].transform.position, hero.transform.position) > spawners[i].radius + 5) {
+                spawners[i].gameObject.SetActive(false);
+            } else {
+                spawners[i].gameObject.SetActive(true);
+            }
+        }
 
         hud.UpdateHUD();
     }
@@ -63,6 +61,7 @@ public class GameManager : MonoBehaviour
         float l = Mathf.Floor(hero.level);
         if (enemy.level >= l) {
             hero.Hit(enemy.level - l);
+            StartCoroutine(cameraShake.Shake(.15f, .6f));
         } else {
             EatFood(enemy);
             enemy.gameObject.SetActive(false);

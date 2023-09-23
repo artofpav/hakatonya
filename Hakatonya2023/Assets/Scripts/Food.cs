@@ -9,12 +9,12 @@ public class Food : MonoBehaviour
     // Start is called before the first frame update
 
     private void OnCollisionEnter(Collision collision) {
-        GameManager.singl.EatFood(this);
+        if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Hero")) {
+            GameManager.singl.EatFood(this);
+        }
     }
-    private void OnTriggerEnter(Collider other) {
-        //if (other.gameObject.layer == LayerMask.NameToLayer("Hero")) {
-        
-        //}
+    private void OnEnable() {
+        print("Enable food");
     }
 
 

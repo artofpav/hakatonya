@@ -72,8 +72,11 @@ Material:
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
+    - _Depth: 0.0001
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
+    - _FoamCuttoff: 1
+    - _FoamSpeed: 0.001
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -83,14 +86,23 @@ Material:
     - _Parallax: 0.02
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _RippleDensity: 302.72
+    - _RippleSpeed: 1
+    - _Slimness: 11.25
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
+    - _WaveHeight: 0.002
+    - _WaveSpeed: 0.1
     - _ZWrite: 1
     m_Colors:
+    - _BaseColor: {r: 0.027450982, g: 0.14901961, b: 0.2627451, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FoamColor: {r: 0.0031594948, g: 0.34759626, b: 0.6698113, a: 0.49019608}
+    - _RippleColor: {r: 0, g: 0.058229223, b: 0.05882353, a: 0.70980394}
+    - _ShallowWaterColor: {r: 0.05805884, g: 0.23584908, b: 0.03893734, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &2551860822201348370
 MonoBehaviour:
