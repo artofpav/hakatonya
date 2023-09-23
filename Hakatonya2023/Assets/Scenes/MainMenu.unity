@@ -416,6 +416,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2249683721176848752, guid: a5d628982b383ba4aabd7526b427276f, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2249683721176848752, guid: a5d628982b383ba4aabd7526b427276f, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 2249683721176848752, guid: a5d628982b383ba4aabd7526b427276f, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 3450005726077907604, guid: a5d628982b383ba4aabd7526b427276f, type: 3}
       propertyPath: m_Name
       value: MainMenu

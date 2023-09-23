@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\HeroLevel.cs" />
     <Compile Include="Assets\Scripts\Obsoled\Hexagon\HexController.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\AI\EnemyNoRotation.cs" />
     <Compile Include="Assets\Scripts\Top-Down\TopDownController.cs" />
     <Compile Include="Assets\Scripts\Spawn\Spawner.cs" />
     <Compile Include="Assets\Scripts\AI\Enemy.cs" />

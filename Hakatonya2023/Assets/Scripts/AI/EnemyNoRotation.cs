@@ -2,28 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : Food
+public class EnemyNoRotation : Enemy
 {
     private GameObject target;
-    public enum EnemyState {Idle, Attack, Run}
-
-    public float level;
-    public EnemyState state = EnemyState.Idle;
-    public float speed = 1;
-
-    public float wanderDistance = 10;
-    public float awarnesDistance = 15;
-    public Animator anim;
-    //public Rigidbody rBody;
 
     private Vector3 targetPosition;
     private Vector3 wanderPoint;
     private RaycastHit hit;
     // note that the ray starts at 100 units
     private Ray ray;
-    public LayerMask goundColliderMask;
-
-    public float riseDistance = 0.2f;
 
 
     private void OnCollisionEnter(Collision collision) {
@@ -57,7 +44,7 @@ public class Enemy : Food
 
 
             if ((Vector3.Distance(transform.position, target.transform.position) > wanderDistance) ||
-                (Vector3.Distance(transform.position, target.transform.position) < 1f)) {
+                (Vector3.Distance(transform.position, target.transform.position) < wanderDistance * 0.2f)) {
 
                 targetPosition = new Vector3(Random.insideUnitCircle.x * wanderDistance, 0, Random.insideUnitCircle.y * wanderDistance);
 
@@ -135,5 +122,7 @@ public class Enemy : Food
             }
 
         }
+
+        transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
     }
 }
