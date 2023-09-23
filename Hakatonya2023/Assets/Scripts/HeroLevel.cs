@@ -9,5 +9,6 @@ public class HeroLevel : MonoBehaviour
     public HeroLevel nextLevel;
     public GameObject houseHolder;
     public GameObject cam;
+    public ParticleSystem dust;
 
 }

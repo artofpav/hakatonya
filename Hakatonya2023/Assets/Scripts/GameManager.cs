@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public HUDManager hud;
     public HeroController hero;
 
+    public CameraShake cameraShake;
+
     Ray ray;
     RaycastHit hit;
 
@@ -63,6 +65,7 @@ public class GameManager : MonoBehaviour
         float l = Mathf.Floor(hero.level);
         if (enemy.level >= l) {
             hero.Hit(enemy.level - l);
+            StartCoroutine(cameraShake.Shake(.15f, .6f));
         } else {
             EatFood(enemy);
             enemy.gameObject.SetActive(false);

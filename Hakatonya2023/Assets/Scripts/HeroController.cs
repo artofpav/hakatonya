@@ -91,14 +91,19 @@ public class HeroController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space)) {
                 isHidden = true;
                 animController.SetBool("hidden", true);
+                currentLevel.dust.Stop();
                 rBody.useGravity = false;
                 rBody.velocity = new Vector3(0, 0, 0);
                 currentLevel.coll.enabled = false;
+
+                StartCoroutine(GameManager.singl.cameraShake.Shake(.5f, .15f));
             } else if (Input.GetKeyUp(KeyCode.Space)) {
                 isHidden = false;
                 animController.SetBool("hidden", false);
                 currentLevel.coll.enabled = true;
                 rBody.useGravity = true;
+
+                StartCoroutine(GameManager.singl.cameraShake.Shake(.25f, .15f));
             }
 
             if (!isHidden) {
@@ -111,11 +116,13 @@ public class HeroController : MonoBehaviour
 
                 if (direction != Vector3.zero) {
                     animController.SetBool("walk", true);
+                    currentLevel.dust.Play();
                     rBody.velocity = direction * speed * Time.deltaTime;
 
                     toRotation = Quaternion.LookRotation(direction, Vector3.up);
                     model.transform.rotation = Quaternion.RotateTowards(model.transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
                 } else {
+                    currentLevel.dust.Stop();
                     animController.SetBool("walk", false);
                 }
 
@@ -136,10 +143,13 @@ public class HeroController : MonoBehaviour
                     rBody.velocity = new Vector3(rBody.velocity.x, rBody.velocity.y, 0);
                 }
 
+            } else {
+                currentLevel.dust.Stop();
             }
 
 
         } else { //finish eating
+            currentLevel.dust.Stop();
             rBody.velocity = new Vector3(0, 0, 0);
             //= Quaternion.RotateTowards(model.transform.rotation, Quaternion.LookRotation(foodToEat.transform.position, Vector3.up), rotationSpeed * (Time.deltaTime*10));
             eatingTime -= Time.deltaTime;
