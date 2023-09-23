@@ -12,6 +12,7 @@ public class HeroController : MonoBehaviour
     public float maxSpeed;
     public bool rush = false;
     public float endurance = 1;
+    public float enduranceLossSpeed = 0.1f;
     public bool isHidden = false;
     public float life = 1;
 
@@ -40,6 +41,7 @@ public class HeroController : MonoBehaviour
     public Food foodToEat;
 
     public HeroLevel currentLevel;
+    public House currentHouse;
 
     public LayerMask goundColliderMask;
     public Transform sphereCastOrigin;
@@ -70,8 +72,16 @@ public class HeroController : MonoBehaviour
     void Update() {
 
         if (life <= 0) {
-            GameManager.singl.GameOver();
+
+            level = Mathf.Floor(level) - 1;
+            if (level <= 0) {
+                GameManager.singl.GameOver();
+                return;
+            }
+            life = 1;
+            SetLevel(currentLevel.prevLevel);
         }
+
 
         if (!dontEat) {
             food -= hungerSpeed * Time.deltaTime;
@@ -89,7 +99,14 @@ public class HeroController : MonoBehaviour
             life -= radiationSpeed * 10;
         }
 
-        level += growLevel * (radiation + 1);
+        level += (growLevel/Mathf.Floor(level)) * (radiation + 1);
+
+
+        if ( Mathf.Floor(level) > currentLevel.level && level < 6) {
+            if (currentLevel.nextLevel != null) {
+                SetLevel(currentLevel.nextLevel);
+            }
+        }
 
         if (!eating) {
 
@@ -203,13 +220,48 @@ public class HeroController : MonoBehaviour
         animController.SetTrigger("damage");
         life -= 0.1f + (0.1f * hitLevel);
     }
-    
 
-    public void GetHouse (House _house) {
 
+    public void GetHouse(House _house) {
+
+        currentHouse = _house;
         _house.transform.parent = currentLevel.houseHolder.transform;
         _house.transform.localPosition = Vector3.zero;
-        _house.transform.localRotation = new Quaternion(0,0,0,0);
+        _house.transform.localRotation = new Quaternion(0, 0, 0, 0);
+
+
+    }
+
+    private void SetLevel(HeroLevel _targetLevel) {
+
+
+
+        currentLevel.gameObject.SetActive(false);
+        currentLevel.cam.SetActive(false);
+
+        currentLevel = currentLevel.nextLevel;
+
+        currentLevel.gameObject.SetActive(true);
+        currentLevel.cam.SetActive(true);
+
+        if (currentHouse != null) {
+            Destroy(currentHouse);
+        }
+
+        model = currentLevel.gameObject;
+        animController = currentLevel.animController;
+
+        speed = currentLevel.speed;
+        enduranceLossSpeed = currentLevel.enduranceLossSpeed;
+        growLevel = currentLevel.growLevel;
+        hungerSpeed = currentLevel.hungerSpeed;
+        hungerDeathSpeed = currentLevel.hungerDeathSpeed;
+        eatMaxTime = currentLevel.eatMaxTime;
+        radiationSpeed = currentLevel.radiationSpeed;
+
+        sphereCastOrigin = currentLevel.sphereCastOrigin;
+        sphereCastRadius = currentLevel.sphereCastRadius;
+
 
     }
 
