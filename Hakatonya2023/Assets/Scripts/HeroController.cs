@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class HeroController : MonoBehaviour
 {
+    public bool dontEat = false;
     public GameObject model;
     public float speed = 1 ;
     public float rotationSpeed = 90;
@@ -41,6 +42,8 @@ public class HeroController : MonoBehaviour
     public HeroLevel currentLevel;
 
     public LayerMask goundColliderMask;
+    public Transform sphereCastOrigin;
+    public float sphereCastRadius = 2f;
 
     private Vector3 velocity = new Vector3(0, 0, 0);
     private Rigidbody rBody;
@@ -49,6 +52,7 @@ public class HeroController : MonoBehaviour
     private Vector3 direction;
 
     private Quaternion toRotation;
+    private Vector3 targetPosition;
 
     private RaycastHit hit;
     // note that the ray starts at 100 units
@@ -69,7 +73,9 @@ public class HeroController : MonoBehaviour
             GameManager.singl.GameOver();
         }
 
-        food -= hungerSpeed * Time.deltaTime;
+        if (!dontEat) {
+            food -= hungerSpeed * Time.deltaTime;
+        }
 
         if (food > 1) {
             food = 1;
@@ -163,10 +169,23 @@ public class HeroController : MonoBehaviour
 
         ray = new Ray(transform.position + Vector3.up * 100, Vector3.down);
 
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, goundColliderMask)) {
-            if (hit.collider != null & Vector3.Distance(hit.point, transform.position) > 0.2f) {
+        targetPosition = transform.position;
+//        Vector3 rayCastOrigin = sphereCastOrigin.position;
+//        rayCastOrigin.y = rayCastOrigin.y + 0.2f;
+
+        if (Physics.SphereCast(sphereCastOrigin.position, sphereCastRadius, -Vector3.up, out hit, goundColliderMask)) {
+            if (hit.collider != null & Vector3.Distance(hit.point, transform.position) < 0.2f) {
                 // this is where the gameobject is actually put on the ground
-                transform.position = new Vector3(transform.position.x, hit.point.y+0.2f, transform.position.z);
+                targetPosition.y = hit.point.y;
+                transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * 5);
+            } else {
+                if (Physics.Raycast(ray, out hit, Mathf.Infinity, goundColliderMask)) {
+                    if (hit.collider != null) {
+                        targetPosition.y = hit.point.y;
+                        // this is where the gameobject is actually put on the ground
+                        transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime*5);
+                    }
+                }
             }
         }
 

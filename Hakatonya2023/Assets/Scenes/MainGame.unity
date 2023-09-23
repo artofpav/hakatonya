@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &54758086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 54758087}
+  m_Layer: 7
+  m_Name: SphereCastOrigin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &54758087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54758086}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.992, z: 0.777}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2092852343}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &119423970
 GameObject:
   m_ObjectHideFlags: 0
@@ -1399,6 +1430,11 @@ SphereCollider:
   m_CorrespondingSourceObject: {fileID: 2092852340, guid: 0c3e199f1ad113649b22927c3202793f, type: 3}
   m_PrefabInstance: {fileID: 3583845452453310377}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &2092852343 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3583845450601780252, guid: 0c3e199f1ad113649b22927c3202793f, type: 3}
+  m_PrefabInstance: {fileID: 3583845452453310377}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2110730861
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1804,6 +1840,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3887947161973799323, guid: 0c3e199f1ad113649b22927c3202793f, type: 3}
+      propertyPath: sphereCastOrigin
+      value: 
+      objectReference: {fileID: 54758087}
     - target: {fileID: 4857593506788883920, guid: 0c3e199f1ad113649b22927c3202793f, type: 3}
       propertyPath: coll
       value: 
