@@ -47,7 +47,7 @@ public class Enemy : Food
 
 
             if (Vector3.Distance(transform.position, GameManager.singl.hero.transform.position) < awarnesDistance && !GameManager.singl.hero.isHidden) {
-                if (GameManager.singl.hero.level <= level+1) {
+                if (Mathf.Floor(GameManager.singl.hero.level) <= level) {
                     state = EnemyState.Attack; 
                 } else {
                     state = EnemyState.Run;

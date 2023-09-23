@@ -14,3 +14,5 @@ Hakatonya2023/Logs/shadercompiler-UnityShaderCompiler.exe0.log
 *.dwlt
 Hakatonya2023/.vs/Hakatonya2023/v16/.suo
 *.log
+*.dwlt
+*.csproj
