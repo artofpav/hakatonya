@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GreenTile
+  m_Name: Chaynik 2
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ValidKeywords:
   - _ENVIRONMENTREFLECTIONS_OFF
@@ -110,8 +110,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.3547793, g: 0.49019608, b: 0.17254905, a: 1}
-    - _Color: {r: 0.3547793, g: 0.49019608, b: 0.17254905, a: 1}
+    - _BaseColor: {r: 0.4056604, g: 0.3162046, b: 0.17795478, a: 1}
+    - _Color: {r: 0.4056604, g: 0.3162046, b: 0.17795478, a: 1}
     - _EmissionColor: {r: 0, g: 1, b: 0.9013953, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
