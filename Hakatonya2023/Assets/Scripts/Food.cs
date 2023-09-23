@@ -12,7 +12,7 @@ public class Food : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision) {
         if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Hero")) {
-            GameManager.singl.EatFood(this);
+            GameManager.singl.hero.EatFood(this);
         }
     }
     private void OnEnable() {
