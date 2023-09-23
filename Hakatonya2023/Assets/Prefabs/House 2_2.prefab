@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 2
   coll: {fileID: 801681225}
-  speedModifier: 1
+  speedModifier: 1.2
   damageModifier: 1
   hungerModifier: 1
 --- !u!135 &801681225
@@ -62,8 +62,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.06
-  m_Center: {x: 0.09, y: 0.02, z: -0.49}
+  m_Radius: 1.46
+  m_Center: {x: 0.09, y: 0.24, z: -1.43}
 --- !u!1001 &4011064791104986417
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -131,6 +131,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ac1869712aeca3347b35513f1950867a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2e08b69057079c5438af77f34e53a2a6, type: 2}
+    - target: {fileID: -7511558181221131132, guid: ac1869712aeca3347b35513f1950867a, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 89a36d878d2ec8448860ab3e37415024, type: 2}
     - target: {fileID: 919132149155446097, guid: ac1869712aeca3347b35513f1950867a, type: 3}
       propertyPath: m_Name
       value: Domik_banka

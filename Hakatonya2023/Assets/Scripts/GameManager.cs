@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,7 @@ public class GameManager : MonoBehaviour
     public static GameManager singl;
 
     public HUDManager hud;
-    public HeroController hero;
+    public HeroControllerBehind hero;
     public List<Spawner> spawners;
 
     public CameraShake cameraShake;
@@ -63,16 +64,16 @@ public class GameManager : MonoBehaviour
             hero.Hit(enemy.level - l);
             StartCoroutine(cameraShake.Shake(.15f, .6f));
         } else {
-            EatFood(enemy);
+            hero.EatFood(enemy);
             enemy.gameObject.SetActive(false);
         }
     }
 
-    public void EatFood(Food food) {
-        hero.EatFood(food);
-    }
-
     public void GameOver() {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void Final() {
+        SceneManager.LoadScene("FinalScene");
     }
 }

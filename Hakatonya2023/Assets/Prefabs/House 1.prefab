@@ -133,7 +133,7 @@ MonoBehaviour:
   level: 1
   coll: {fileID: 801681225}
   speedModifier: 1
-  damageModifier: 1
+  damageModifier: 0.7
   hungerModifier: 1
 --- !u!135 &801681225
 SphereCollider:
