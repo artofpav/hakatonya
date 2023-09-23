@@ -248,7 +248,8 @@ public class HeroController : MonoBehaviour
             speedModifier = 1;
             damageModifier = 1;
             hungerModifier = 1;
-            Destroy(currentHouse);
+
+            Destroy(currentHouse.gameObject);
         }
 
         currentHouse = _house;
@@ -268,6 +269,7 @@ public class HeroController : MonoBehaviour
 
         currentLevel.gameObject.SetActive(false);
         currentLevel.cam.SetActive(false);
+        currentLevel.coll.enabled = false;
 
         currentLevel = _targetLevel;
 
@@ -281,6 +283,7 @@ public class HeroController : MonoBehaviour
             Destroy(currentHouse);
         }
 
+        currentLevel.coll.enabled = true;
         model = currentLevel.gameObject;
         animController = currentLevel.animController;
 
