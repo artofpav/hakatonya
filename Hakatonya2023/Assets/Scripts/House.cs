@@ -12,13 +12,12 @@ public class House : MonoBehaviour
     public float damageModifier = 1;
     public float hungerModifier = 1;
 
-    private void OnTriggerEnter(Collider other) {
-        
-    }
+
     private void OnCollisionEnter(Collision collision) {
         if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Hero")) {
             if (Mathf.Floor(GameManager.singl.hero.level) == level) {
                 GameManager.singl.hero.GetHouse(this);
+                GetComponent<Collider>().enabled = false;
             } else {
                 Physics.IgnoreCollision(GameManager.singl.hero.GetComponent<Collider>(), GetComponent<Collider>());
 
