@@ -17089,6 +17089,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -310341416525306290, guid: fa9fda10a7588314e980d0e220679a3c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 554b4a6278618244685b0e278b99a5a4, type: 2}
+    - target: {fileID: -310341416525306290, guid: fa9fda10a7588314e980d0e220679a3c, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2e08b69057079c5438af77f34e53a2a6, type: 2}
     - target: {fileID: 919132149155446097, guid: fa9fda10a7588314e980d0e220679a3c, type: 3}
       propertyPath: m_Name
       value: Level 3
@@ -17150,7 +17158,7 @@ MonoBehaviour:
   prevLevel: {fileID: 8528703844940777279}
   nextLevel: {fileID: 1909827437956827090}
   animController: {fileID: 3725302792856684027}
-  speed: 32
+  speed: 24
   enduranceLossSpeed: 1
   growLevel: 0.004
   hungerSpeed: 0.01
@@ -17204,15 +17212,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4235e76befb66ba4dbecedd17313fbce, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4235e76befb66ba4dbecedd17313fbce, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4235e76befb66ba4dbecedd17313fbce, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4235e76befb66ba4dbecedd17313fbce, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
