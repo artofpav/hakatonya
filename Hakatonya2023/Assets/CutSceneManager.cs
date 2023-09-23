@@ -5,8 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class CutSceneManager : MonoBehaviour
 {
+    public bool final = false;
+
     public List<GameObject> cuts;
     private int count = 0;
+
+    
 
 
     private void Start() {
@@ -26,7 +30,11 @@ public class CutSceneManager : MonoBehaviour
                 count++;
                 cuts[count].SetActive(true);
             } else {
-                SceneManager.LoadScene("MainGame");
+                if (!final) {
+                    SceneManager.LoadScene("MainGame");
+                } else {
+                    SceneManager.LoadScene("MainMenu");
+                }
             }
         }
     }

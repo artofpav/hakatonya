@@ -184,15 +184,18 @@ public class HeroController : MonoBehaviour
 
 
         } else { //finish eating
-            //currentLevel.dust.Stop();
-            rBody.velocity = new Vector3(0, 0, 0);
-            //= Quaternion.RotateTowards(model.transform.rotation, Quaternion.LookRotation(foodToEat.transform.position, Vector3.up), rotationSpeed * (Time.deltaTime*10));
-            eatingTime -= Time.deltaTime;
-            if (eatingTime <= 0) {
-                eating = false;
-                animController.SetBool("eating", false);
-                foodToEat.gameObject.transform.position = Vector3.zero;
-                foodToEat.gameObject.SetActive(false);
+            if (foodToEat != null) {
+             
+                rBody.velocity = new Vector3(0, 0, 0);
+             
+                eatingTime -= Time.deltaTime;
+                if (eatingTime <= 0) {
+                    eating = false;
+                    animController.SetBool("eating", false);
+                    foodToEat.gameObject.transform.position = Vector3.zero;
+                    foodToEat.gameObject.SetActive(false);
+                    foodToEat = null;
+                }
             }
         }
 
@@ -221,7 +224,7 @@ public class HeroController : MonoBehaviour
 
     }
 
-    internal void EatFood(Food _food) {
+    public  void EatFood(Food _food) {
         eatSound.Play();
         float foodModifier = _food.level / level;
         level += (_food.calories * foodModifier) * (radiation + 1);
@@ -242,6 +245,10 @@ public class HeroController : MonoBehaviour
     public void GetHouse(House _house) {
 
         levelUpSound.Play();
+
+        if (_house.level == 5) {
+            GameManager.singl.Final();
+        }
 
 
         if (currentHouse != null) {
