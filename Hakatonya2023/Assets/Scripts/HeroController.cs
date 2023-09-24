@@ -61,9 +61,9 @@ public class HeroController : MonoBehaviour
     private Ray ray;
 
 
-    private float speedModifier = 1;
-    private float damageModifier = 1;
-    private float hungerModifier = 1;
+    public float speedModifier = 1;
+    public float damageModifier = 1;
+    public float hungerModifier = 1;
 
     public AudioSource hideSound;
     public AudioSource runSound;
@@ -228,6 +228,8 @@ public class HeroController : MonoBehaviour
         eatSound.Play();
         float foodModifier = _food.level / level;
         level += (_food.calories * foodModifier) * (radiation + 1);
+        if (level > 5)
+            level = 5;
         foodToEat = _food;
         eating = true;
         animController.SetBool("eating", true);
@@ -248,9 +250,13 @@ public class HeroController : MonoBehaviour
 
         if (_house.level == 5) {
             GameManager.singl.Final();
+        } else {
+            if (_house.level < Mathf.Floor(level)) {
+                return;
+            }
         }
 
-
+        
         if (currentHouse != null) {
             speedModifier = 1;
             damageModifier = 1;
@@ -287,7 +293,7 @@ public class HeroController : MonoBehaviour
             speedModifier = 1;
             damageModifier = 1;
             hungerModifier = 1;
-            Destroy(currentHouse);
+            Destroy(currentHouse.gameObject);
         }
 
         currentLevel.coll.enabled = true;

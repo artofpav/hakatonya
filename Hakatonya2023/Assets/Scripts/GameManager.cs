@@ -56,6 +56,10 @@ public class GameManager : MonoBehaviour
         }
 
         hud.UpdateHUD();
+
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 
     public void HitHero(Enemy enemy) {

@@ -134,6 +134,12 @@ MonoBehaviour:
   food: {fileID: 3344510500089223696}
   radiation: {fileID: 7581534371272508532}
   growth: {fileID: 1567201632549761025}
+  speedUP: {fileID: 0}
+  speedDown: {fileID: 0}
+  armorUp: {fileID: 0}
+  armorDown: {fileID: 0}
+  foodUp: {fileID: 0}
+  foodDown: {fileID: 0}
 --- !u!1 &561117448457075335
 GameObject:
   m_ObjectHideFlags: 0
@@ -1694,7 +1700,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9bde4cea768d7b243af4624a21acb107, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a6941c14fba5bdd479241ced8511c168, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1977,7 +1983,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2af33a1b61debb44185407a33998146f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9bde4cea768d7b243af4624a21acb107, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3489,7 +3495,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 937ff6af98cf35c46968a2c21fef61f0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1488d9c0f2f470741abeeb7f08326192, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
