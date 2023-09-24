@@ -61,9 +61,9 @@ public class HeroControllerBehind : MonoBehaviour
     private Ray ray;
 
 
-    private float speedModifier = 1;
-    private float damageModifier = 1;
-    private float hungerModifier = 1;
+    public float speedModifier = 1;
+    public float damageModifier = 1;
+    public float hungerModifier = 1;
 
     public AudioSource hideSound;
     public AudioSource runSound;
