@@ -10683,7 +10683,6 @@ GameObject:
   - component: {fileID: 3583845450601780252}
   - component: {fileID: 3583845450601780248}
   - component: {fileID: 5655560150344918757}
-  - component: {fileID: 3887947161973799323}
   - component: {fileID: 8935587205848655021}
   - component: {fileID: 2092852340}
   - component: {fileID: 6086732312540642546}
@@ -10832,56 +10831,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3887947161973799323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3583845450601780249}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25a8e0b87fc767e4e97aa4aa3bbc9285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dontEat: 1
-  model: {fileID: 887267773945608643}
-  speed: 8
-  rotationSpeed: 360
-  maxSpeed: 0
-  rush: 0
-  endurance: 1
-  enduranceLossSpeed: 0.1
-  isHidden: 0
-  life: 1
-  food: 1
-  weight: 1
-  growLevel: 0.001
-  level: 1
-  hungerSpeed: 0.01
-  hungerDeathSpeed: 0.015
-  eating: 0
-  eatMaxTime: 1
-  eatingTime: 0
-  naked: 0
-  radiation: 0
-  radiationSpeed: -2.83
-  animController: {fileID: 5907536539816065283}
-  interactDistance: 2
-  foodToEat: {fileID: 0}
-  currentLevel: {fileID: 4857593506788883920}
-  currentHouse: {fileID: 0}
-  goundColliderMask:
-    serializedVersion: 2
-    m_Bits: 256
-  sphereCastOrigin: {fileID: 54758087}
-  sphereCastRadius: 2
-  hideSound: {fileID: 8903841129389591886}
-  runSound: {fileID: 263928794072763068}
-  hitSound: {fileID: 2400698992566195140}
-  eatSound: {fileID: 1706960265282034542}
-  deathSound: {fileID: 3823191923834804487}
-  levelUpSound: {fileID: 4995505684391960970}
 --- !u!114 &8935587205848655021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11007,6 +10956,9 @@ MonoBehaviour:
     m_Bits: 256
   sphereCastOrigin: {fileID: 54758087}
   sphereCastRadius: 4
+  speedModifier: 1
+  damageModifier: 1
+  hungerModifier: 1
   hideSound: {fileID: 8903841129389591886}
   runSound: {fileID: 263928794072763068}
   hitSound: {fileID: 2400698992566195140}

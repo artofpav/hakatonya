@@ -244,6 +244,11 @@ public class HeroControllerBehind : MonoBehaviour
         float foodModifier = _food.level / level;
         foodModifier *= 2;
         level += (_food.calories * foodModifier) * (radiation + 1);
+        
+        if (level > 5) {
+            level = 5;
+        }
+
         foodToEat = _food;
         eating = true;
         animController.SetBool("eating", true);
